@@ -24,11 +24,12 @@ python3 -m pip install \
       genestack-client==1.53.12
 ```
 
-2. Obtain a token for the Public user in Genestack by logging in to ODM as the Public user and clicking on the profile link under the Public username:
+2. Obtain a token for your Genestack user by logging in to ODM and clicking on the profile link under the username. 
+   See an example for Public user below:
 
    ![GetToken](Token.png)
 
-   You will recieve an email with a link to your token – if using the Public account, you may need to visit the mailcatcher to obtain this link.
+   You will receive an email with a link to your token, open the link and save the token for future needs.
 
 3. Set up your account with the Genestack Python client from a console
    ```shell
@@ -43,7 +44,7 @@ python3 -m pip install \
    2) by email and password
    Select authentication: 1
    Host: https://domain_name/frontend
-   Please specify Genestack API token for "my_test_user":
+   Please specify Genestack API token for "my_user":
    ```
 7. Type ‘quit' to exit the user-setup.
 
