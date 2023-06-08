@@ -29,7 +29,8 @@ python3 -m pip install \
 
    ![GetToken](Token.png)
 
-   You will receive an email with a link to your token, open the link and save the token for future needs.
+   You need to click on the "Create new token" button, so you will receive an email with a link to your token. 
+   Please open the link in the email and save the token for future needs.
 
 3. Set up your account with the Genestack Python client from a console
    ```shell
