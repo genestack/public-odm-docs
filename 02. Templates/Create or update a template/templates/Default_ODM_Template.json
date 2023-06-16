@@ -95,6 +95,14 @@
     "isReadOnly": true
   },
   {
+    "isRequired": true,
+    "metainfoType": "com.genestack.api.metainfo.StringValue",
+    "dataType": "genestack:transcriptomicsParent",
+    "name": "Data Class",
+    "isReadOnly": true,
+    "description": "A mandatory parameter for parent data objects, specifying the exact type of data"
+  },
+  {
     "dictionaryName": "Sequencing Platforms",
     "dataType": "genestack:transcriptomicsParent",
     "isRequired": false,
@@ -167,11 +175,43 @@
     "isReadOnly": false
   },
   {
+    "isRequired": false,
+    "metainfoType": "com.genestack.api.metainfo.StringValue",
+    "dataType": "genestack:transcriptomicsParent",
+    "name": "Features (string)",
+    "isReadOnly": true,
+    "description": "A set of string attributes when data is represented by multiple attributes per feature. It is highly recommended to have this parameter in the template.",
+  },
+  {
+    "isRequired": false,
+    "metainfoType": "com.genestack.api.metainfo.StringValue",
+    "dataType": "genestack:transcriptomicsParent",
+    "name": "Features (numeric)",
+    "isReadOnly": true,
+    "description": "A set of numeric attributes when data is represented by multiple attributes per feature. It is highly recommended to have this parameter in the template."
+  },
+  {
+    "isRequired": false,
+    "metainfoType": "com.genestack.api.metainfo.StringValue",
+    "dataType": "genestack:transcriptomicsParent",
+    "name": "Values (numeric)",
+    "isReadOnly": true,
+    "description": "A set of values when data contains multiple measurements for a single item (sample/library/preparation etc.). It is highly recommended to have this parameter in the template."
+  },
+  {
     "dataType": "genestack:facsParent",
     "isRequired": true,
     "metainfoType": "com.genestack.api.metainfo.StringValue",
     "name": "genestack:accession",
     "isReadOnly": true
+  },
+  {
+    "isRequired": true,
+    "metainfoType": "com.genestack.api.metainfo.StringValue",
+    "dataType": "genestack:facsParent",
+    "name": "Data Class",
+    "isReadOnly": true,
+    "description": "A mandatory parameter for parent data objects, specifying the exact type of data"
   },
   {
     "dataType": "genestack:facsParent",
@@ -365,6 +405,14 @@
     "metainfoType": "com.genestack.api.metainfo.StringValue",
     "name": "genestack:accession",
     "isReadOnly": true
+  },
+  {
+    "isRequired": true,
+    "metainfoType": "com.genestack.api.metainfo.StringValue",
+    "dataType": "genestack:genomicsParent",
+    "name": "Data Class",
+    "isReadOnly": true,
+    "description": "A mandatory parameter for parent data objects, specifying the exact type of data"
   },
   {
     "dictionaryName": "Sequencing Platforms",

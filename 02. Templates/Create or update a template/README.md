@@ -75,6 +75,9 @@ The template json file is validated in ODM against an internal schema: [template
     isReadOnly = true
     ```
 
+   It is recommended to include properties having `isRequired = true` into the template file. Please also check out
+   the `description` property attribute: some properties might be required for certain functionality.
+
 4. The values accepted for each metadata attribute are given by the `metainfoType` key, and must be one of the following values:
 
     ```
