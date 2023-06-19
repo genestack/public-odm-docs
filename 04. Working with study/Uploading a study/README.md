@@ -65,6 +65,7 @@ Additional optional parameters:
   entities - `-ile, --ignore_linking_errors`
 * to recognize first `N` columns in expression file as feature attributes: `-nfa [N]`
   or `--number-of-feature-attributes [N]`
+* to specify the uploaded data as a data class `C`: `--data-class "C"`
 
 ___
 
