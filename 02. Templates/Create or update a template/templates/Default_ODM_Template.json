@@ -100,7 +100,7 @@
     "dataType": "genestack:transcriptomicsParent",
     "name": "Data Class",
     "isReadOnly": true,
-    "description": "A mandatory parameter for parent data objects, specifying the exact type of data"
+    "description": "A mandatory field specifying the exact type of data you have uploaded. Please do not remove this attribute."
   },
   {
     "dictionaryName": "Sequencing Platforms",
@@ -180,7 +180,7 @@
     "dataType": "genestack:transcriptomicsParent",
     "name": "Features (string)",
     "isReadOnly": true,
-    "description": "A set of string attributes when data is represented by multiple attributes per feature. It is highly recommended to have this parameter in the template.",
+    "description": "If your dataset contains multiple columns for feature, this parameter lists columns with text content (e.g., Gene Name). Please do not remove this attribute."
   },
   {
     "isRequired": false,
@@ -188,7 +188,7 @@
     "dataType": "genestack:transcriptomicsParent",
     "name": "Features (numeric)",
     "isReadOnly": true,
-    "description": "A set of numeric attributes when data is represented by multiple attributes per feature. It is highly recommended to have this parameter in the template."
+    "description": "If your dataset contains multiple columns for feature, this parameter lists columns with numeric content (e.g., Retention Time, M/Z ratio). Please do not remove this attribute."
   },
   {
     "isRequired": false,
@@ -196,7 +196,7 @@
     "dataType": "genestack:transcriptomicsParent",
     "name": "Values (numeric)",
     "isReadOnly": true,
-    "description": "A set of values when data contains multiple measurements for a single item (sample/library/preparation etc.). It is highly recommended to have this parameter in the template."
+    "description": "If your dataset contains multiple measurement or value types for each item (like a sample, library, or preparation), this parameter lists these (e.g. Intensity, Fold Change, p-value). Please do not remove this attribute."
   },
   {
     "dataType": "genestack:facsParent",
@@ -211,7 +211,7 @@
     "dataType": "genestack:facsParent",
     "name": "Data Class",
     "isReadOnly": true,
-    "description": "A mandatory parameter for parent data objects, specifying the exact type of data"
+    "description": "A mandatory field specifying the exact type of data you have uploaded. Please do not remove this attribute."
   },
   {
     "dataType": "genestack:facsParent",
@@ -412,7 +412,7 @@
     "dataType": "genestack:genomicsParent",
     "name": "Data Class",
     "isReadOnly": true,
-    "description": "A mandatory parameter for parent data objects, specifying the exact type of data"
+    "description": "A mandatory field specifying the exact type of data you have uploaded. Please do not remove this attribute."
   },
   {
     "dictionaryName": "Sequencing Platforms",
