@@ -65,8 +65,11 @@ Additional optional parameters:
   entities - `-ile, --ignore_linking_errors`
 * to recognize first `N` columns in expression file as feature attributes: `-nfa [N]`
   or `--number-of-feature-attributes [N]`
-* to specify the uploaded data as a data class `C`: `-dc "C"` or `--data-class "C"`
-  * The following options are available: `Bulk transcriptomics`, `Single cell transcriptomics`, `Differential abundance (FC, pval, etc.)`, `Pathway analysis`, `Proteomics`, `Single cell proteomics`, `Metabolomics`, `Epigenomics`, `DNA methylation`, `Chemoinformatics`, `Imaging features`, `Gene panel data`, `Biomarker data`, `Physical measures`, `Blood counts`, `Other body fluid counts`, `Nanopore`, `Gene variant (VCF)`, `Flow Cytometry`, `Other`
+* to identify multiple measurement in expression file and use a character `:` to distinguish the
+  sample/library/preparation name from the measurement name in column headers: `-ms ':'`
+  or `--measurement-separator ':'`
+* to specify the uploaded data as a data class `C`: `-dc 'C'` or `--data-class 'C'`
+    * The following options are available: `Bulk transcriptomics`, `Single cell transcriptomics`, `Differential abundance (FC, pval, etc.)`, `Pathway analysis`, `Proteomics`, `Single cell proteomics`, `Metabolomics`, `Epigenomics`, `DNA methylation`, `Chemoinformatics`, `Imaging features`, `Gene panel data`, `Biomarker data`, `Physical measures`, `Blood counts`, `Other body fluid counts`, `Nanopore`, `Gene variant (VCF)`, `Flow Cytometry`, `Other`
 
 ___
 
