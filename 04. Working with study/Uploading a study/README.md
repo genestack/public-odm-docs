@@ -39,8 +39,8 @@ odm-import-data -h
     * `-sm,--samples`: URL of the samples file or accession of existing samples file to be linked
     * `-lb, --libraries`: URL of the libraries file or accession of existing libraries file to be linked
     * `-pr, --preparations`: URL of hosted preparations file or accession of existing preparations file to be linked
-    * `-e,--expression`: URL of the GCT data file
-    * `-em,--expression_metadata`: URL of the GCT metadata file
+    * `-e,--expression`: URL of any tabular data file (not only expression data) except Gene Variant or Flow Cytometry
+    * `-em,--expression_metadata`: URL of any tabular metadata file (not only expression data) except Gene Variant or Flow Cytometry
     * `-v, --variant`: URL of the variants data file
     * `-vm, --variant_metadata`: URL of the variants metadata file
     * `-f, --flow_cytometry`: URL of the flow cytometry data file
