@@ -40,29 +40,29 @@ odm-import-data -h
     * `-lb, --libraries`: URL of the libraries file or accession of existing libraries file to be linked
     * `-pr, --preparations`: URL of hosted preparations file or accession of existing preparations file to be linked
     * `-e,--expression`: URL of any tabular data file (not only expression data) except Gene Variant or Flow Cytometry
-    * `-em,--expression_metadata`: URL of any tabular metadata file (not only expression data) except Gene Variant or Flow Cytometry
+    * `-em,--expression-metadata`: URL of any tabular metadata file (not only expression data) except Gene Variant or Flow Cytometry
     * `-v, --variant`: URL of the variants data file
-    * `-vm, --variant_metadata`: URL of the variants metadata file
-    * `-f, --flow_cytometry`: URL of the flow cytometry data file
-    * `-fm, --flow_cytometry_metadata`: URL of the flow cytometry metadata file
+    * `-vm, --variant-metadata`: URL of the variants metadata file
+    * `-f, --flow-cytometry`: URL of the flow cytometry data file
+    * `-fm, --flow-cytometry-metadata`: URL of the flow cytometry metadata file
     * `-tmpl, --template`: accession of a template to validate against, if not specified "template marked as default" is
       used;
 
 Additional optional parameters:
 
 * to include a gene-transcript mapping file:
-    * `-mpf / mapping_file` - link to mapping file
-    * `-mpfm / mapping_file_metadata` - link to metadata file for the mapping file
-    * `-mpfa / mapping_file_accession` - accession of the existing mapping file
+    * `-mpf / mapping-file` - link to mapping file
+    * `-mpfm / mapping-file-metadata` - link to metadata file for the mapping file
+    * `-mpfa / mapping-file-accession` - accession of the existing mapping file
 
 * rules for uploading mapping files are described in the section below “Importing a cross-reference mapping file“
 * to allow the loading of a duplicate of the study: the data from the links has already been previously loaded into ODM
   and for testing purposes, you need to load this data again - `--allow-duplicates`
 * to link all entities of the study according to the data model used: data model with and without libraries and
-  preparations - `-lata, --link_all_to_all`. Additional rules are described in the section below “Link all to all“
+  preparations - `-lata, --link-all-to-all`. Additional rules are described in the section below “Link all to all“
 * to enable debug mode - `--debug`
 * to allow the script to continue even if linking errors occurred between study
-  entities - `-ile, --ignore_linking_errors`
+  entities - `-ile, --ignore-linking-errors`
 * to recognize first `N` columns in expression file as feature attributes: `-nfa [N]`
   or `--number-of-feature-attributes [N]`
 * to specify the uploaded data as a data class `C`: `-dc "C"` or `--data-class "C"`
@@ -80,7 +80,7 @@ The script supports 2 data models:
 * Study - Samples - Libraries/Preparations - Omics data.
     * the script uses this data model if parameters for libraries or preparations loading are specified;
     * omics data can be linked only to libraries or preparations;
-    * only expression data (the parameters --expression and --expression_metadata) is supported.
+    * only expression data (the parameters --expression and --expression-metadata) is supported.
 
 The script works sequentially, linking the object with the previous one according to the data model. Below you can find
 examples to demonstrate different combinations:
@@ -92,9 +92,9 @@ odm-import-data --token [token] -srv [HOST] \
   --study http://data_source/study.csv \ 
   --samples http://data_source/samples_1.csv \ 
   --expression http://data_source/expression_1.gct \ 
-  --expression_metadata http://data_source/expression_metadata_1.gct.tsv \
+  --expression-metadata http://data_source/expression_metadata_1.gct.tsv \
   --expression http://data_source/expression_2.gct \ 
-  --expression_metadata http://data_source/expression_metadata_2.gct.tsv \
+  --expression-metadata http://data_source/expression_metadata_2.gct.tsv
 ```
 
 * `samples_1` will be linked to `study`
@@ -109,10 +109,10 @@ odm-import-data --token [token] -srv [HOST] \
   --samples http://data_source/samples_1.csv \ 
   --libraries http://data_source/libraries_1.csv \
   --expression http://data_source/expression_1.gct \ 
-  --expression_metadata http://data_source/expression_metadata_1.gct.tsv \
+  --expression-metadata http://data_source/expression_metadata_1.gct.tsv \
   --preparations http://data_source/preparations_1.csv \
   --expression http://data_source/expression_2.gct \ 
-  --expression_metadata http://data_source/expression_metadata_2.gct.tsv \
+  --expression-metadata http://data_source/expression_metadata_2.gct.tsv
 ```
 
 * `samples_1` will be linked to `study`
@@ -131,7 +131,7 @@ odm-import-data --token [token] -srv [HOST] \
   --libraries http://data_source/libraries_1.csv \
   --preparations http://data_source/preparations_1.csv \
   --expression http://data_source/expression_1.gct \ 
-  --expression_metadata http://data_source/expression_metadata_1.gct.tsv \
+  --expression-metadata http://data_source/expression_metadata_1.gct.tsv
 ```
 
 * `samples_1` will be linked to `study`
@@ -150,7 +150,7 @@ with the specified `-lata` parameter depends on the used data model:
     * the script tries to link all libraries and all preparations to all samples;
     * the script tries to link all omics data to all libraries and preparations.
 
-*Example 1 without --link_all_to_all*
+*Example 1 without --link-all-to-all*
 
 ```shell
 odm-import-data --token [token] -srv [HOST] \
@@ -158,14 +158,14 @@ odm-import-data --token [token] -srv [HOST] \
     --samples http://data_source/samples_1.csv \ 
     --samples http://data_source/samples_2.csv \
     --expression http://data_source/expression_1.gct \ 
-    --expression_metadata http://data_source/expression_metadata_1.gct.tsv
+    --expression-metadata http://data_source/expression_metadata_1.gct.tsv
 ```
 
 * `samples_1` will be linked to `study`
 * `samples_2` will be linked to `study`
 * `expression_1` will be linked only to `samples_2`
 
-*Example 2 with --link_all_to_all*
+*Example 2 with --link-all-to-all*
 
 ```shell
 odm-import-data --token [token] -srv [HOST] \
@@ -173,8 +173,8 @@ odm-import-data --token [token] -srv [HOST] \
     --samples http://data_source/samples_1.csv \ 
     --samples http://data_source/samples_2.csv \
     --expression http://data_source/expression_1.gct \ 
-    --expression_metadata http://data_source/expression_metadata_1.gct.tsv \
-    --link_all_to_all
+    --expression-metadata http://data_source/expression_metadata_1.gct.tsv \
+    --link-all-to-all
 ```
 
 * `samples_1` will be linked to `study`
@@ -191,8 +191,8 @@ odm-import-data --token [token] -srv [HOST] \
     --libraries http://data_source/libraries_1.csv \
     --preparations http://data_source/preparations_1.csv \
     --expression http://data_source/expression_1.gct \ 
-    --expression_metadata http://data_source/expression_metadata_1.gct.tsv \ 
-    --link_all_to_all
+    --expression-metadata http://data_source/expression_metadata_1.gct.tsv \ 
+    --link-all-to-all
 ```
 
 * `samples_1` will be linked to `study`
@@ -227,16 +227,16 @@ odm-import-data --token [token] -srv [HOST] \
     --study http://data_source/study.csv \ 
     --samples http://data_source/samples_1.csv \ 
     --expression http://data_source/expression_1.gct \ 
-    --expression_metadata http://data_source/expression_metadata_1.gct.tsv \ 
+    --expression-metadata http://data_source/expression_metadata_1.gct.tsv \ 
     --expression http://data_source/expression_2.gct \ 
-    --expression_metadata http://data_source/expression_metadata_2.gct.tsv \ 
-    --mapping_file http://data_source/mapping.txt \ 
-    --mapping_file_metadata http://data_source/mapping_metadata.tsv \
+    --expression-metadata http://data_source/expression_metadata_2.gct.tsv \ 
+    --mapping-file http://data_source/mapping.txt \ 
+    --mapping-file-metadata http://data_source/mapping_metadata.tsv \
     --template GSF0000000 \
     --allow-duplicates
 ```
-6. If `link_all_to_all` is specified the script tries to link mapping file to all expression data that was specified.
-7. Only one mapping file can be specified along with `link_all_to_all`.
+6. If `link-all-to-all` is specified the script tries to link mapping file to all expression data that was specified.
+7. Only one mapping file can be specified along with `link-all-to-all`.
 
 ## Versioning
 
@@ -248,12 +248,12 @@ of the data files are kept and are still available, but the active version will 
 
 ```shell
 odm-import-data --token [token] -srv [HOST] \ 
-    --study_accession GSF994039 \
+    --study-accession GSF994039 \
     --samples GSF994040 \
     --expression http://exampl.com/expression.gct[GSF994565]  \
-    --expression_metadata http://exampl.com/expression_metadata.tsv  \
+    --expression-metadata http://exampl.com/expression_metadata.tsv  \
     --variant http://exampl.com/variations.vcf[GSF994700] \
-    --variant_metadata http://exampl.com/variant_metadata.tsv
+    --variant-metadata http://exampl.com/variant_metadata.tsv
 ```
 
 As a result of the above, the data files linked to study `GSF994039` and samples `GSF994040` will be updated:
