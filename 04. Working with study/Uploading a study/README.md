@@ -34,7 +34,7 @@ odm-import-data -h
     * `-t, --token`: your API token \
       [--OR--]
     * `'-at, --access-token'`: Your Access(Bearer Token), provided by third party
-    * `-srv`: address of the host, e.g. https://odm.genestack.com/
+    * `-H, --host, -srv, --server`: address of the host, e.g. https://odm.genestack.com/
     * `-s,--study`: URL of the study file (or -sa: accession of an existing study)
     * `-sm,--samples`: URL of the samples file or accession of existing samples file to be linked
     * `-lb, --libraries`: URL of the libraries file or accession of existing libraries file to be linked
@@ -91,7 +91,7 @@ examples to demonstrate different combinations:
 *Example 1*
 
 ```shell
-odm-import-data --token [token] -srv [HOST] \ 
+odm-import-data --token [token] -H [HOST] \ 
   --study http://data_source/study.csv \ 
   --samples http://data_source/samples_1.csv \ 
   --expression http://data_source/expression_1.gct \ 
@@ -107,7 +107,7 @@ odm-import-data --token [token] -srv [HOST] \
 *Example 2*
 
 ```shell
-odm-import-data --token [token] -srv [HOST] \
+odm-import-data --token [token] -H [HOST] \
   --study http://data_source/study.csv \ 
   --samples http://data_source/samples_1.csv \ 
   --libraries http://data_source/libraries_1.csv \
@@ -127,7 +127,7 @@ odm-import-data --token [token] -srv [HOST] \
 *Example 3*
 
 ```shell
-odm-import-data --token [token] -srv [HOST] \
+odm-import-data --token [token] -H [HOST] \
   --study http://data_source/study.csv \ 
   --samples http://data_source/samples_1.csv \ 
   --samples http://data_source/samples_2.csv \ 
@@ -156,7 +156,7 @@ with the specified `-lata` parameter depends on the used data model:
 *Example 1 without --link-all-to-all*
 
 ```shell
-odm-import-data --token [token] -srv [HOST] \
+odm-import-data --token [token] -H [HOST] \
     --study http://data_source/study.csv \ 
     --samples http://data_source/samples_1.csv \ 
     --samples http://data_source/samples_2.csv \
@@ -171,7 +171,7 @@ odm-import-data --token [token] -srv [HOST] \
 *Example 2 with --link-all-to-all*
 
 ```shell
-odm-import-data --token [token] -srv [HOST] \
+odm-import-data --token [token] -H [HOST] \
     --study http://data_source/study.csv \ 
     --samples http://data_source/samples_1.csv \ 
     --samples http://data_source/samples_2.csv \
@@ -187,7 +187,7 @@ odm-import-data --token [token] -srv [HOST] \
 *Example 3 with libraries*
 
 ```shell
-odm-import-data --token [token] -srv [HOST] \ 
+odm-import-data --token [token] -H [HOST] \ 
     --study http://data_source/study.csv \ 
     --samples http://data_source/samples_1.csv \ 
     --samples http://data_source/samples_2.csv \
@@ -226,7 +226,7 @@ How to specify the parameters:
    an error message is given: "only one mapping file is expected. check the value of parameters “mpf” or “mpfa”".
 5. The parameters “mpf”, “mpfm” and “mpfa” must be after the parameters for loading expression data, for example:
 ```shell
-odm-import-data --token [token] -srv [HOST] \ 
+odm-import-data --token [token] -H [HOST] \ 
     --study http://data_source/study.csv \ 
     --samples http://data_source/samples_1.csv \ 
     --expression http://data_source/expression_1.gct \ 
@@ -250,7 +250,7 @@ of the data files are kept and are still available, but the active version will 
 *Example:*
 
 ```shell
-odm-import-data --token [token] -srv [HOST] \ 
+odm-import-data --token [token] -H [HOST] \ 
     --study-accession GSF994039 \
     --samples GSF994040 \
     --expression http://exampl.com/expression.gct[GSF994565]  \
