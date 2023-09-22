@@ -27,3 +27,5 @@ Below you can see a table with description of ODM dictionaries:
 | [Ethnic Groups](Dictionaries/ethnic_groups.csv)              | A non-hierarchical controlled vocabulary including list of ethnic groups | |
 
 [Units](units-bio-dose-energy-length-time) - these are generated inside ODM.
+The most recent dictionary versions, used in ODM, are located under s3 bucket and available via http link.
+Example: https://odm-init.s3.amazonaws.com/dictionaries/cellosaurus.obo

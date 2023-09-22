@@ -9,7 +9,7 @@ This article explains how to load custom dictionaries (ontologies) in ODM.
 * Genestack Python client installed. See [how to setup Genestack python client](../../00.%20Packages%20to%20install/1.%20Genestack%20python%20client)
 * Auxiliary scripts installed. See [how to install Genestack auxiliary scripts](../../00.%20Packages%20to%20install/2.%20Genestack%20auxiliary%20scripts)
 * A file describing dictionaries, e.g.: [dictionaries.json](dictionaries.json)
-* One or more dictionaries in CSV, JSON, OWL, OBO or TTL formats, hosted at FTP or HTTP web addresses or contained in a local folder, see [dictionary example](http://purl.obolibrary.org/obo/go.owl)
+* One or more dictionaries in CSV, JSON, OWL, OBO or TTL formats, hosted at FTP or HTTP web addresses, see [dictionary example](http://purl.obolibrary.org/obo/go.owl)
 
 ## Setting up dictionary name/location
 Open the ```dictionaries.json``` file and replace the ```name```, ```url``` and ```description``` sections with the desired dictionary name as it will appear in ODM, dictionary location, and dictionary description.
@@ -23,15 +23,7 @@ Open the ```dictionaries.json``` file and replace the ```name```, ```url``` and 
     }
 ]
 ```
-Multiple dictionaries can be supplied by repeating the section in curly brackets. \
-Local files can be supplied with the full path on the machine - replace ```FULL_PATH_TO_THE_FILE``` to the path to the dictionary, in this case the ```url``` should be specified as:
-``` 
-"url": "/FULL_PATH_TO_THE_FILE/body_weight_unit.csv"
-```
-
-Or the dictionary file name can be used if the dictionary file is in the same directory as the script. In this case the ```url``` should be specified as:
-
-``` "url": "body_weight_unit.csv" ```
+Multiple dictionaries can be supplied by repeating the section in curly brackets.
 
 ## Running the command to import dictionaries
 Run the following command from your terminal:
